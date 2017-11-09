@@ -1,0 +1,23 @@
+<html>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% todos = Produto.all %>
+        <% todos.each do |produto| %>
+            <tr>
+                <td><%= produto.nome %></td>
+                <td><%= produto.valor %></td>
+                <td><%= produto.quantidade %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+</body>
+</html>

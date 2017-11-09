@@ -1,0 +1,11 @@
+<html>
+<%= form_for Produto.new do |f| %>
+<%= f.label :nome %>   
+<%= f.text_field :nome %>
+<%= f.label :valor %>   
+<%= f.text_field :valor %>
+<%= f.label :quantidade %>   
+<%= f.text_field :quantidade %>
+<%= f.submit "Adicionar Produto" %>
+<% end %>
+</html>
