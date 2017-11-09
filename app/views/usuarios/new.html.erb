@@ -1,0 +1,11 @@
+<html>
+<%= form_for Usuario.new do |f| %> # tem que ver o método que vai utilizar para fazer o login aqui.
+<%= f.label :nome %> 
+<%= f.text_field :nome %>
+<%= f.label :password %>   
+<%= f.text_field :password %>
+<%= f.label :perfil %>   
+<%= f.text_field :perfil %>
+<%= f.submit "Login" %>
+<% end %>
+</html>

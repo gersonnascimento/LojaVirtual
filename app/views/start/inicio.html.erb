@@ -1,14 +1,13 @@
-<html>
-<body>
 <div class="container">
 <div class="row">
-  <div class="col-sm-8"><img src="images/logoadmin.png" class="img-rounded img-responsive" /></div>
-  <div class="col-sm-4"><img src="images/logo.jpg" class="img-rounded img-responsive"/><h1 style="color: DarkOrange">GD e-commerce<br>Administração</h1></div>
+  <div class="col-sm-6"><img src="images/imgfront.jpg" class="img-rounded img-responsive" /></div>
+  <div class="col-sm-6"><h1 class="display-1" style="color: #000080; margin-top: 20%; margin-left: 30%">DG EXPRESS</h1></div>
 </div>
 </div>
-<table class="table table-bordered">
+<table class="table table-bordered" style="margin-top: 20px">
     <thead>
         <tr>
+            <th>Imagem</th>
             <th>Nome</th>
             <th>Preço</th>
             <th>Quantidade</th>
@@ -18,10 +17,11 @@
         <% todos = Produto.all %>
         <% todos.each do |produto| %>
             <tr>
+                <td><img src="images/produto<%=produto.id%>.jpg" class="img-rounded img-responsive" /></td>
                 <td><%= produto.nome %></td>
                 <td><%= produto.valor %></td>
                 <td><%= produto.quantidade %></td>
-                <td><a href="/produtos/<%= produto.id %>/remove" class="btn btn-danger">Remover</a></td>
+                <td><a href="/produtos/<%= produto.id %>/buy" class="btn btn-success">Comprar</a></td>
             </tr>
         <% end %>
     </tbody>
