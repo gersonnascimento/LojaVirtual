@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "start#inicio"
+  root "start#index"
   get "/produtos/new" => "produtos#new"
-  get "/produtos" => "start#index"
+  get "/produtos" => "start#admin"
   post "/produtos" => "produtos#create"
   post "/usuarios" => "usuarios#create"
   get "/produtos/:id/remove" => "produtos#apagar"

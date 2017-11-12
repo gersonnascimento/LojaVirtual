@@ -1,31 +1,36 @@
-<html>
-<body>
 <div class="container">
 <div class="row">
-  <div class="col-sm-8"><img src="images/logoadmin.png" class="img-rounded img-responsive" /></div>
-  <div class="col-sm-4"><img src="images/logo.jpg" class="img-rounded img-responsive"/><h1 style="color: DarkOrange">GD e-commerce<br>Administração</h1></div>
+  <div class="col-sm-6"><img src="images/imgfront.jpg" class="img-rounded img-responsive" /></div>
+  <div class="col-sm-6"><h1 class="display-1" style="color: #000080; margin-top: 20%; margin-left: 30%">GD EXPRESS</h1></div>
 </div>
 </div>
-<table class="table table-bordered">
+<% if @todos.size ==0 then%>
+
+<div class="col-sm-2"></div>
+  <div class="col-sm-8"><h1 class="display-1" style="color: red; margin-top: 10%; margin-left: 15%">Não existem produtos cadastrados.</h1></div>
+  <div class="col-sm-2"></div>
+<%else%>
+<table class="table table-bordered" style="margin-top: 20px">
     <thead>
         <tr>
-            <th>Nome</th>
+            <th>Produto</th>
             <th>Preço</th>
             <th>Quantidade</th>
+            <th> </th>
         </tr>
     </thead>
     <tbody>
         <% todos = Produto.all %>
         <% todos.each do |produto| %>
             <tr>
-                <td><%= produto.nome %></td>
-                <td><%= produto.valor %></td>
-                <td><%= produto.quantidade %></td>
-                <td><a href="/produtos/<%= produto.id %>/remove" class="btn btn-danger">Remover</a></td>
+              
+                <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><h2 style="margin-left: 20%"><%= produto.nome %><h2></td>
+                <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><h2 style="margin-top: 40%; margin-left: 30%; color: LimeGreen">R$ <%= format("%.2f", produto.valor) %></h2></td>
+                <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><h3 style="margin-top: 45%; margin-left: 45%"><%= produto.quantidade %></h3></td>
+                <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><a href="/produtos/<%= produto.id %>/buy" style="margin-top: 40%;" class="btn btn-primary btn-lg btn-block">Comprar</a></td>
             </tr>
-        <% end %>
+        <% end 
+        end%>
     </tbody>
 </table>
-<%= link_to "Criar novo produto", produtos_new_path %>
-</body>
-</html>
+<br>
