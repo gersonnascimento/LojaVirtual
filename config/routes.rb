@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post "/usuarios" => "usuarios#create"
   get "/produtos/:id/remove" => "produtos#apagar"
   get "/produtos/:id/buy" => "produtos#comprar"
+  get "produtos/:id/alterar" => "produtos#alterar"
 end

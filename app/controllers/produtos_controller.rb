@@ -34,9 +34,18 @@ class ProdutosController < ApplicationController
     	p.save
     	redirect_to root_url
     	true
-    else redirect_to root_url
-     false
-    end
+    	else redirect_to root_url
+     	false
+    	end
+	end
+
+	def alterar
+		id = params[:id]
+		@p = Produto.find_by(:id => id)
+	end
+
+	def salvarAlteracao
+		@p.save
 	end
 end
 

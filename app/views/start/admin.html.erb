@@ -27,7 +27,8 @@
                 <td><%= produto.nome %></td>
                 <td><%= produto.valor %></td>
                 <td><%= produto.quantidade %></td>
-                <td><a href="/produtos/<%= produto.id %>/remove" class="btn btn-danger">Remover</a></td>
+                <td><a href="/produtos/<%= produto.id %>/remove" class="btn btn-danger">Remover</a>
+                <a href="/produtos/<%= produto.id %>/alterar" class="btn btn-primary">Editar</a></td>
             </tr>
         <% end%>
     </tbody>
